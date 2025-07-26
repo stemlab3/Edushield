@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="../static/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Newtown School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .carousel-inner {
+      min-height: 450px;
+    }
+    #carouselExampleIndicators {
+      position: relative;
+    }
+
+    .fixed-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+      z-index: 20;
+      padding: 30px 20px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      color: #fff;
+      user-select: none;
+      pointer-events: auto;
+    }
+
+    .fixed-caption h5 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 140px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .fixed-caption .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      max-width: 50px;
+    }
+
+    .fixed-caption .btn {
+      padding: 10px 45px;
+      font-size: 1.4rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .fixed-caption .btn:hover {
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid position-relative">
+      <img src="/static/logo.jpg" alt="Logo" style="height:40px; width:auto;" />
+    </a>
+      <span style="font-weight:700; font-size:1.25rem; letter-spacing:1px;">THE NEWTOWN SCHOOL</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" style="z-index:1050;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="fixed-caption">
+      <h5>School Login</h5>
+      <div class="btn-group" role="group" aria-label="Login Buttons">
+        <a href="st_login.html"><button class="btn btn-success">Student</button></a>
+        <a href="tc_login.html"><button class="btn btn-danger">Teacher</button></a>
+        <a href="admin_login.html"><button class="btn btn-primary">Administration</button></a>
+      </div>
+    </div>
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/image1.jpg" class="d-block w-100" alt="Slide 1" />
+      </div>
+
+      <div class="carousel-item">
+        <img src="/static/image2.jpg" class="d-block w-100" alt="Slide 2" />
+      </div>
+
+      <div class="carousel-item">
+        <img src="/static/image3.jpg" class="d-block w-100" alt="Slide 3" />
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<nav class="navbar navbar-light bg-light fixed-bottom border-top">
+  <div class="container justify-content-center">
+    <span class="navbar-text text-center">
+      📞 Contact Us: 03371454400 &nbsp; | &nbsp; ✉️ Email: contact@newownschool.edu.in
+    </span>
+  </div>
+</nav>
+
+</body>
+
+</html>
