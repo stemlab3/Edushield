@@ -23,13 +23,13 @@
         }
 
         .navbar-nav .nav-item {
-            margin-left: 30px; /* Increased space between navbar items */
+            margin-left: 30px;
         }
 
         .navbar-nav .nav-link {
             color: white;
             font-weight: 500;
-            padding-right: 20px; /* Optional: Extra padding for better spacing */
+            padding-right: 20px;
         }
 
         .navbar-brand {
@@ -76,7 +76,7 @@
 
         #emB {
             background-color: red;
-            border-radius:10px;
+            border-radius: 10px;
         }
 
         .complaint-box {
@@ -107,6 +107,63 @@
         .complaint-box button {
             margin-top: 10px;
             width: 100%;
+        }
+
+        .messages-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .message {
+            background-color: #dcf8c6;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateX(30px);
+            animation: messageSend 0.8s forwards;
+        }
+
+        @keyframes messageSend {
+            0% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .success-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left:30px;
+            text-align: center;
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: successMessage 0.8s forwards;
+            width:30%;
+        }
+
+        @keyframes successMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -143,11 +200,38 @@
         <p>Class: 9</p>
         <p>Enrolment No.: 210028</p>
     </div>
+
     <div class="complaint-box">
         <h4>Complaint Box</h4>
         <textarea placeholder="Write your complaint here..."></textarea>
-        <button class="btn btn-primary">Send</button>
+        <button class="btn btn-primary" id="sendButton">Send</button>
     </div>
+
+    <div class="messages-container" id="messagesContainer"></div>
+    <div class="success-message" id="successMessage">Message sent successfully</div>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', function() {
+            const messageText = document.querySelector('.complaint-box textarea').value;
+
+            if (messageText.trim() === "") {
+                alert("Please write something to send.");
+                return;
+            }
+
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.innerText = messageText;
+
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 2000);
+        document.querySelector('.complaint-box textarea').value = ""
+        });
+    </script>
 
 </body>
 
